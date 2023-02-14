@@ -1,0 +1,59 @@
+# version: '3'
+# services:
+#   mongodb:
+#     image: mongo
+#     container_name: mongodb
+#     networks:
+#        - mongonet
+#     ports:
+#       - 27017:27017
+#     environment:
+#       - MONGO_INITDB_ROOT_USERNAME: admin
+#       - MONGO_INITDB_ROOT_PASSWORD: password
+#   mongo-express:
+#     image: mongo-express
+#     ports:
+#       - 8080:8081
+#      container_name: mongo-express
+#     networks:
+#        - mongonet
+#     environment:
+#       - ME_CONFIG_MONGODB_SERVER: mongodb
+#       - ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+#       - ME_CONFIG_MONGODB_ADMINPASSWORD: password
+#       - ME_CONFIG_MONGODB_PORT: 27017
+# networks:
+#   mongonet:
+#     driver: bridge
+
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    # networks:
+    #   - mongonet
+    ports:
+      - 27017:27017
+    # environment:
+    #    MONGO_INITDB_ROOT_USERNAME: admin
+    #    MONGO_INITDB_ROOT_PASSWORD: password
+
+
+#   mongo-express:
+#     image: mongo-express:0.54
+#     container_name: mongo-express
+#     networks:
+#       - mongonet
+#     ports:
+#       - 8081:8081
+#     environment:
+#       ME_CONFIG_MONGODB_SERVER: mongodb
+#       ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+#       ME_CONFIG_MONGODB_ADMINPASSWORD: password
+#       ME_CONFIG_MONGODB_PORT: 27017
+
+
+# networks:
+#   mongonet:
+#     driver: bridge
